@@ -8,18 +8,15 @@ from scipy.stats import pearsonr
 # Datei Pfad
 file_path = '/Users/ahmadiqbalmss/Downloads/Datensatz_Stadtimage_Braunschweig_SoSe24_codiert.sav'
 
-# SPSS .sav Datei laden
 df, meta = pyreadstat.read_sav(file_path)
 
-# Spaltennamen anzeigen, um die richtigen zu identifizieren
 print(df.columns)
 
 # Fälle entfernen, die den Aufmerksamkeitstest nicht bestanden haben
 attention_test_var = 'EvBS_Kontrolle1'
 df = df[df[attention_test_var] == 4]
 
-# Konstrukte basierend auf den tatsächlichen Spaltennamen definieren
-# Bitte ersetzen Sie die Platzhalter durch die tatsächlichen Spaltennamen
+# Konstrukte
 constructs_city_attractiveness = ['CICBS_CICB1', 'CICBS_CICB2', 'CICBS_CICB3', 'CICBS_CICB4']
 constructs_recommend_city = ['NPSBS_NPSBS1', 'NPSBS_NPSBS2', 'NPSBS_NPSBS3']
 constructs_cultural_offerings = ['EvBS_EvBS1', 'EvBS_EvBS2', 'EvBS_EvBS3']
